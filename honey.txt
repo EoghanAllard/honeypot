@@ -1,0 +1,17 @@
+C:\Users\eogha>ssh -i "HoneypotKeyPair.pem" ec2-user@ec2-16-170-228-183.eu-north-1.compute.amazonaws.com
+
+
+PS C:\Users\eogha\Downloads\honeypot> python honeypot\responseSystem\manual.py block-ip 192.168.1.100
+IP address 192.168.1.100 has been blocked.
+PS C:\Users\eogha\Downloads\honeypot> python honeypot\responseSystem\manual.py unblock-ip 192.168.1.100
+
+
+
+ssh -i "HoneypotKeyPair.pem" -L 3306:honeypotdb.cbuakqw8o5hc.eu-north-1.rds.amazonaws.com:3306 ec2-user@ec2-16-170-228-183.eu-north-1.compute.amazonaws.com
+
+scp -r -i "HoneypotKeyPair.pem" C:\Users\eogha\Downloads\honeypot ec2-user@ec2-16-171-132-250.eu-north-1.compute.amazonaws.com:/home/ec2-user
+
+mysql -h honeypotdb.cbuakqw8o5hc.eu-north-1.rds.amazonaws.com -u admin-p
+
+
+pip install -r requirements.txt
